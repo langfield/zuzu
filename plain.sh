@@ -12,4 +12,4 @@ rm -rf txt
 mkdir txt
 sources=$(find -iname "*.html" | sed 's/(/\\\\(/g' | sed 's/)/\\\\)/g' | sed "s,',\\\\\\\\\\\',g")
 export -f dump
-xargs -t -I{} bash -c "dump {}" < <(echo "$sources")
+xargs -P 0 -t -I{} bash -c "dump {}" < <(echo "$sources")
