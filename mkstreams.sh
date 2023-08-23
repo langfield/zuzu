@@ -7,11 +7,13 @@ dl () {
           | sed 's/^  <li><a href="//g' \
           | sed 's/".\+$//g' \
           | sed "s/'/\\\\'/g" \
-          | sed "s,^,$baseurl/,g")
+          | sed "s,^,$baseurl/,g" \
+          )
   topic=$(echo $1 \
           | sed 's/^.\+\/stream\/[0-9]\+-//g' \
           | sed 's/\/[^\/]\+$//g' \
-          | sed 's/-\/-/-/g')
+          | sed 's/-\/-/-/g' \
+          )
   mkdir out/$topic
   cd out/$topic
   echo "$urls" | xargs -P 0 -I{} wget {}
@@ -21,7 +23,8 @@ streams=$(curl https://leanprover-community.github.io/archive/ \
           | sed '/href="stream/!d' \
           | sed 's/^    <p><a href="/https:\/\/leanprover-community.github.io\/archive\//g' \
           | sed 's/".\+$//g' \
-          | head -n 1)
+          | head -n 1 \
+          )
 rm -rf out
 mkdir out
 export -f dl
