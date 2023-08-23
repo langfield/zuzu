@@ -1,0 +1,8 @@
+Azula: "In my country, we exchange a pleasant hello before asking questions. Have you become uncivilized so soon, Zuzu?"
+Zuko: "Don't call me that!"
+
+Stuff zuzu+grep can do that zulip search can't
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+grep -Rn "succ\.succ\.succ"
+grep -Rn "refine'"
+grep -Rn "``("
