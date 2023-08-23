@@ -23,7 +23,6 @@ streams=$(curl https://leanprover-community.github.io/archive/ \
           | sed '/href="stream/!d' \
           | sed 's/^    <p><a href="/https:\/\/leanprover-community.github.io\/archive\//g' \
           | sed 's/".\+$//g' \
-          | head -n 1 \
           )
 rm -rf out
 mkdir out
